@@ -1,0 +1,1 @@
+var myDawgs = new XMLHttpRequest;
