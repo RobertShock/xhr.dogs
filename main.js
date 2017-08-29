@@ -3,9 +3,9 @@ function runThisAfterDogsLoads(){
 	console.log("dogs", data);
 };
 
-function runThisAfterBreedzLoads(){
-	var data = JSON.parse(this.responseText).breedz;
-	console.log("breedz", data);
+function runThisAfterBreedsLoads(){
+	var data = JSON.parse(this.responseText).breeds;
+	console.log("breeds", data);
 };
 
 function shitBroke (){
@@ -18,10 +18,33 @@ myDawgs.addEventListener("error", shitBroke);
 myDawgs.open("GET", "dogs.json");
 myDawgs.send();
 
-var myBreedz = new XMLHttpRequest;
-myBreedz.addEventListener("load", runThisAfterBreedsLoads);
-myBreedz.addEventListener("error", stillBroke);
-myBreedz.open("GET", "breeds.json");
-myBreedz.send();
+var myBreeds = new XMLHttpRequest;
+myBreeds.addEventListener("load", runThisAfterBreedsLoads);
+myBreeds.addEventListener("error", shitBroke);
+myBreeds.open("GET", "breeds.json");
+myBreeds.send();
+
+function combinedArray (){
+	// loop through dogs and look at breed_id
+	// loop through breeds and find matching breed_id
+	// make final price
+}
+
+
+function domString(){
+	// usual stuff, loop through, make a string
+}
+
+function writeToDom(){
+	// put in the DOM;
+}
+
+
+
+
+
+
+
+
 
 
