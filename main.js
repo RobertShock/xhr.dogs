@@ -1,7 +1,11 @@
-
 function runThisAfterDogsLoads(){
 	var data = JSON.parse(this.responseText).dogs;
 	console.log("dogs", data);
+};
+
+function runThisAfterBreedzLoads(){
+	var data = JSON.parse(this.responseText).breedz;
+	console.log("breedz", data);
 };
 
 function shitBroke (){
@@ -14,19 +18,10 @@ myDawgs.addEventListener("error", shitBroke);
 myDawgs.open("GET", "dogs.json");
 myDawgs.send();
 
+var myBreedz = new XMLHttpRequest;
+myBreedz.addEventListener("load", runThisAfterBreedsLoads);
+myBreedz.addEventListener("error", stillBroke);
+myBreedz.open("GET", "breeds.json");
+myBreedz.send();
 
 
-function runThisAfterBreedsLoads(){
-	var data = JSON.parse(this.responseText).breeds;
-	console.log("breeds", data);
-};
-
-function stillBroke (){
-	console.log("NOW WHAT?");
-};
-
-var myDawgs2 = new XMLHttpRequest;
-myDawgs2.addEventListener("load", runThisAfterBreedsLoads);
-myDawgs2.addEventListener("error", stillBroke);
-myDawgs2.open("GET", "breeds.json");
-myDawgs2.send();
