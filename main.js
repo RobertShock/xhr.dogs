@@ -14,7 +14,6 @@ myDawgs.addEventListener("error", shitBroke);
 myDawgs.open("GET", "dogs.json");
 myDawgs.send();
 
-
 function getBreeds(dogs){
 	// console.log("dogs array inside getBreeds", dogs);
 	var myBreeds = new XMLHttpRequest;
